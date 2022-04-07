@@ -49,6 +49,9 @@
 - 키보드 처리 + 목록 리셋
 
 
+| 텍스트필드 입력값 초기화 시 키보드 처리 | 빈 영역 터치 시 키보드 처리 |
+| --- | --- |
+| ![ImageSearch_gif4](https://user-images.githubusercontent.com/39648822/162127645-47377015-6fd5-43a1-9919-057c05005ffc.gif) | ![ImageSearch_gif5](https://user-images.githubusercontent.com/39648822/162127653-fa5a16ae-9a2e-4d70-a0dc-6bcaa69e9ceb.gif) |
 
 ---
 
