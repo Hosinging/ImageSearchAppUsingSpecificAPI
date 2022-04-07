@@ -1,8 +1,5 @@
 # ImageSearchAppUsingSpecificAPI
 
-# TheosImageSearchApp
-
-
 # Introduction
 
 **다음 이미지 검색 RestApi를 이용**해 검색어가 입력되면 해당 검색어를 쿼리로하여 데이터를 요청하고 response에 담긴 내용을 그리드 형태로 표시하는 앱입니다. 
