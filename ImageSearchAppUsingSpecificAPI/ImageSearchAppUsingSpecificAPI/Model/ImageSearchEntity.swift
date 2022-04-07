@@ -31,9 +31,13 @@ struct Document: Codable, Hashable {
 }
 
 struct Meta: Codable {
-    let isEnd: Bool
+    var isEnd: Bool
+    var pageableCount: Int
+    var totalCount: Int
     
     enum CodingKeys: String, CodingKey {
         case isEnd = "is_end"
+        case pageableCount = "pageable_count"
+        case totalCount = "total_count"
     }
 }
