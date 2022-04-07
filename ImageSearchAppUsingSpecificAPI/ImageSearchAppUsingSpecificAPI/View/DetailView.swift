@@ -13,13 +13,11 @@ struct DetailView: View {
     
     var body: some View {
         ScrollView([.vertical]) {
-            VStack {
                 KFImage(URL(string: document.imageUrl))
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .aspectRatio(contentMode: .fill)
                 
-            }
         }
         .background(Color.black)
     }
