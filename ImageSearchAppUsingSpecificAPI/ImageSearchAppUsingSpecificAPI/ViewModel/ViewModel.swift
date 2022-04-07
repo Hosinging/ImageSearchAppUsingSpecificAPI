@@ -35,7 +35,7 @@ class ViewModel: ObservableObject {
         
     }
     
-    func fetchNetxPageImages(query: String) {
+    func fetchNextPageImages(query: String) {
         self.isLoading = true
         guard let isEndInfo = isEndInfo,
                 let pageableInfo = pageableInfo else { return }
