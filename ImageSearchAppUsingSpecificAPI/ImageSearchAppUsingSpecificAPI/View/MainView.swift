@@ -42,35 +42,37 @@ struct MainView_Previews: PreviewProvider {
 }
 
 extension MainView {
+    private var imageGridView: some View {
+        LazyVGrid(columns: columns, spacing: 10) {
+            ForEach(vm.results, id: \.self) { result in
+                NavigationLink {
+                    DetailView(document: result)
+                } label: {
+                    VStack(alignment: .leading, spacing: 5) {
+                        KFImage(URL(string: result.thumbnailUrl))
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(20)
+                        Spacer()
+                        Text((result.displaySiteName ?? "").isEmpty ? "출처불분명" : result.displaySiteName ?? "")
+                            .font(.system(size: 14, weight: .bold))
+                        Text(result.datetime?.adjustFormat() ?? "")
+                            .font(.system(size: 12))
+                        Spacer()
+                    }
+                    .onAppear {
+                        fetchNextImages(document: result)
+                    }
+                    .padding()
+                }
+            }
+        }
+    }
+    
     private var withDataSearchView: some View {
         ScrollView {
             CustomSearchBar
-            LazyVGrid(columns: columns, spacing: 10) {
-                ForEach(vm.results, id: \.self) { result in
-                    
-                    NavigationLink {
-                        DetailView(document: result)
-                    } label: {
-                        VStack(alignment: .leading, spacing: 5) {
-                            KFImage(URL(string: result.thumbnailUrl))
-                                .resizable()
-                                .scaledToFit()
-                                .cornerRadius(20)
-                            Spacer()
-                            Text((result.displaySiteName ?? "").isEmpty ? "출처불분명" : result.displaySiteName ?? "")
-                                .font(.system(size: 14, weight: .bold))
-                            Text(result.datetime?.adjustFormat() ?? "")
-                                .font(.system(size: 12))
-                            Spacer()
-                        }
-                        .onAppear {
-                            fetchNextImages(document: result)
-                        }
-                        .padding()
-                    }
-                }
-            }
-            
+            imageGridView
             if vm.isLoading {
                 CustomProgressView()
             }

@@ -13,14 +13,9 @@ class ViewModel: ObservableObject {
     @Published var results = [Document]()
     @Published var networkResult = true
     @Published var noSearchResultText = ""
-    @Published var isEndInfo: Meta? {
-        didSet {
-            print("값 변화 : \(isEndInfo)")
-        }
-    }
+    @Published var isEndInfo: Meta? 
     @Published var pageableCount: Int? {
         didSet {
-            print("pageableCount값 변화 : \(pageableCount)")
             if pageableCount ?? 0 > 30 {
                 currentPage += 1
             }
