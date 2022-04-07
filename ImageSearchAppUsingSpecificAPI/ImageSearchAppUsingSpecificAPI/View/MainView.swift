@@ -12,7 +12,6 @@ struct MainView: View {
     @EnvironmentObject private var vm: ViewModel
     @State private var searchText = ""
     @State private var isSearching = true
-    @State private var presenteFullScreen = false
     
     let columns: [GridItem] = Array(repeating: .init(.adaptive(minimum: .infinity)), count: 3)
     
@@ -45,35 +44,10 @@ struct MainView_Previews: PreviewProvider {
 extension MainView {
     private var withDataSearchView: some View {
         ScrollView {
-            HStack {
-                TextField("검색어를 입력하세요.", text: $searchText)
-                    .padding(.leading, 25)
-                    .onChange(of: searchText) { newValue in
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                            vm.fetchData(queryString: newValue)
-                        }
-                    }
-            }
-            .padding()
-            .background(Color(white: 0, opacity: 0.05))
-            .cornerRadius(10)
-            .padding()
-            .overlay(
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                    Spacer()
-                    Image(systemName: "xmark.circle.fill")
-                        .opacity(searchText.isEmpty ? 0.0 : 1.0)
-                        .onTapGesture {
-                            searchText = ""
-                            self.hideKeyboard()
-                        }
-                }
-                    .padding(.horizontal, 32)
-            )
-            
+            CustomSearchBar
             LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(vm.results, id: \.self) { result in
+                    
                     NavigationLink {
                         DetailView(document: result)
                     } label: {
@@ -89,46 +63,63 @@ extension MainView {
                                 .font(.system(size: 12))
                             Spacer()
                         }
+                        .onAppear {
+                            fetchNextImages(document: result)
+                        }
                         .padding()
                     }
                 }
             }
+            
+            if vm.isLoading {
+                CustomProgressView()
+            }
         }
+    }
+    
+    func fetchNextImages(document: Document) {
+            if vm.results.last == document {
+                vm.fetchNextPageImagesSubject.send(searchText)
+            }
     }
     
     private var withoutDataSearchView: some View {
         ScrollView {
             VStack {
-                HStack {
-                    TextField("검색어를 입력하세요.", text: $searchText)
-                        .padding(.leading, 25)
-                        .onChange(of: searchText) { newValue in
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                                vm.fetchData(queryString: newValue)
-                            }
-                        }
-                }
-                .padding()
-                .background(Color(white: 0, opacity: 0.05))
-                .cornerRadius(10)
-                .padding()
-                .overlay(
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                        Spacer()
-                        Image(systemName: "xmark.circle.fill")
-                            .opacity(searchText.isEmpty ? 0.0 : 1.0)
-                            .onTapGesture {
-                                searchText = ""
-                                self.hideKeyboard()
-                            }
-                    }
-                        .padding(.horizontal, 32)
-                )
+                CustomSearchBar
                 Text(vm.noSearchResultText)
                     .padding(.top, 200)
             }
         }
+    }
+    
+    private var CustomSearchBar: some View {
+        HStack {
+            TextField("검색어를 입력하세요.", text: $searchText)
+                .padding(.leading, 25)
+                .onChange(of: searchText) { newValue in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                        vm.fetchData(queryString: newValue)
+                    }
+                }
+        }
+        .padding()
+        .background(Color(white: 0, opacity: 0.05))
+        .cornerRadius(10)
+        .padding()
+        .overlay(
+            HStack {
+                Image(systemName: "magnifyingglass")
+                Spacer()
+                Image(systemName: "xmark.circle.fill")
+                    .opacity(searchText.isEmpty ? 0.0 : 1.0)
+                    .onTapGesture {
+                        searchText = ""
+                        self.hideKeyboard()
+                    }
+            }
+                .padding(.horizontal, 32)
+        )
     }
 }
 
