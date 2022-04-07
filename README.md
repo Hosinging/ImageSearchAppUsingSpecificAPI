@@ -48,9 +48,12 @@
 
 
 - 페이징 처리
+
 ![ImageSearch_gif5](https://user-images.githubusercontent.com/39648822/162260864-2a8a9661-2358-49bf-9aed-65c63742b4ac.gif)
 
 - display_sitename과 datetime이 있을 경우 이미지 하단에 표시
+
+
 ![ImageSearch_gif6](https://user-images.githubusercontent.com/39648822/162264388-0412b35d-ca64-4b52-8d7a-f34efc5b887e.gif)
 
 ---
