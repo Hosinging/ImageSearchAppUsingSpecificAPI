@@ -73,6 +73,6 @@
 
 ### Combine의 passthrouhSubject를 통한 이벤트처리
 
-### 라이브러리 사용(Kingfisher, Alamofire(페이징 처리에 사용 시도 중)
+### 대중적인 라이브러리 사용(Kingfisher, Alamofire)
 
 
