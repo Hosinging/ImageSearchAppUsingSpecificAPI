@@ -46,6 +46,9 @@
 ![ImageSearch_gif2](https://user-images.githubusercontent.com/39648822/162124737-efbb8be8-514d-4411-82c7-21ae161d8c40.gif)
 
 
+- 키보드 처리 + 목록 리셋
+
+
 
 ---
 
