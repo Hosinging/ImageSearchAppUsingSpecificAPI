@@ -12,6 +12,7 @@ enum NetworkError: Error {
     case invalidRequest
     case badResponse
     case unknownError(message: String)
+    case failedBaseUrlOptionalBinding
 }
 
 class NetworkService {

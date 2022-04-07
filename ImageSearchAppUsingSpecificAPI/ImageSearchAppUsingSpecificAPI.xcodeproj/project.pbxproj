@@ -21,6 +21,7 @@
 		E4F95BB027FEA3650085DC2D /* Extension + View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F95BAF27FEA3650085DC2D /* Extension + View.swift */; };
 		E4F95BB327FEA4180085DC2D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F95BB227FEA4180085DC2D /* DetailView.swift */; };
 		E4F95BB527FEB2970085DC2D /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F95BB427FEB2960085DC2D /* Extension + String.swift */; };
+		E4F95BFA27FF23EA0085DC2D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F95BF927FF23EA0085DC2D /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		E4F95BAF27FEA3650085DC2D /* Extension + View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + View.swift"; sourceTree = "<group>"; };
 		E4F95BB227FEA4180085DC2D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E4F95BB427FEB2960085DC2D /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
+		E4F95BF927FF23EA0085DC2D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				E4F95BA327FEA0120085DC2D /* NetworkMethod.swift */,
 				E4F95BA527FEA02B0085DC2D /* URLBuilder.swift */,
 				E4F95BAA27FEA1D00085DC2D /* NetworkService.swift */,
+				E4F95BF927FF23EA0085DC2D /* Router.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F95BFA27FF23EA0085DC2D /* Router.swift in Sources */,
 				E4F95BA627FEA02B0085DC2D /* URLBuilder.swift in Sources */,
 				E4F95BB327FEA4180085DC2D /* DetailView.swift in Sources */,
 				E4F95B8927FE9E430085DC2D /* MainView.swift in Sources */,
