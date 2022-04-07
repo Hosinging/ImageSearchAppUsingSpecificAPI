@@ -85,7 +85,7 @@ extension MainView {
                             Spacer()
                             Text((result.displaySiteName ?? "").isEmpty ? "출처불분명" : result.displaySiteName ?? "")
                                 .font(.system(size: 14, weight: .bold))
-                            Text(result.datetime ?? "")
+                            Text(result.datetime?.adjustFormat() ?? "")
                                 .font(.system(size: 12))
                             Spacer()
                         }
