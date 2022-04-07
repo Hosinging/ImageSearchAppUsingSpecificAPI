@@ -32,26 +32,24 @@
 
 
 # 구현 화면
-- 검색어 입력 후 1초 뒤 검색 시작 + 목록 리셋 + 검색 결과가 없을 경우 안내문구 표시
+- 검색어 입력 후 1초 뒤 검색 시작 + 목록 리셋 
 
-| 검색어 입력 후 1초 뒤 검색 시작 + 목록 리셋 + 검색 결과가 없을 경우 안내문구 표시 | 검색어 입력 후 1초 뒤 검색 시작 + 목록 리셋 |
+| 검색어 입력 후 1초 뒤 검색 시작 + 목록 리셋 | 검색 결과 없을 때 문구 표시 및 검색어 재입력 시 검색 결과 다시 표시 |
 |--- | ---|
-|![imageSearch_gif1](https://user-images.githubusercontent.com/39648822/162124451-800c5973-c795-4123-8357-d7ddbb366c1a.gif)| ![ImageSearch_gif3](https://user-images.githubusercontent.com/39648822/162126715-8dc66bde-24f3-482f-a816-ebdc60fb0f11.gif) |
+|![ImageSearch_gif1](https://user-images.githubusercontent.com/39648822/162135975-f6e48805-7a88-4f7b-969f-3ddde4cac84b.gif)| ![ImageSearch_gif2](https://user-images.githubusercontent.com/39648822/162135927-e83ff5bc-12ca-4b81-be0c-7596bb6ac1e3.gif) |
 
 
 
 - 이미지 탭할 경우 상세 화면으로 이동 + 이미지 비율 유지 + 좌우 여백 0
 
 
-![ImageSearch_gif2](https://user-images.githubusercontent.com/39648822/162124737-efbb8be8-514d-4411-82c7-21ae161d8c40.gif)
+![ImageSearch_gif3](https://user-images.githubusercontent.com/39648822/162135933-49788379-3bca-4837-a37f-d2971e25e235.gif) 
 
 
 - 키보드 처리 + 목록 리셋
 
+![ImageSearch_gif4](https://user-images.githubusercontent.com/39648822/162135938-fc34808b-7638-4a3e-a79e-af9c689a6f17.gif)
 
-| 텍스트필드 입력값 초기화 시 키보드 처리 | 빈 영역 터치 시 키보드 처리 |
-| --- | --- |
-| ![ImageSearch_gif4](https://user-images.githubusercontent.com/39648822/162127645-47377015-6fd5-43a1-9919-057c05005ffc.gif) | ![ImageSearch_gif5](https://user-images.githubusercontent.com/39648822/162127653-fa5a16ae-9a2e-4d70-a0dc-6bcaa69e9ceb.gif) |
 
 ---
 
