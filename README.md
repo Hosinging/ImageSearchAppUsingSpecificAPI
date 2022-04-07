@@ -59,19 +59,19 @@
 ---
 
 # 핵심 경험
-### 검색어 입력 후 1초뒤 검색
+### 검색어 입력 후 1초뒤 검색 동작 기능 구현
 
-### 페이징 처리
+### 페이징 구현
 
-### 이미지 비율 유지 및 스크롤뷰
+### 이미지 비율 관련 설정 값들 확인
 
-### SwiftUI에서의 MVVM
+### SwiftUI에서의 MVVM사용 방법
 
-### URLSession과 Combine을 통한 네트워크 통신
+### URLSession과 Combine을 통한 네트워크 통신 방법
 
-### Alamofire와 Combine을 통한 네트워크 통신
+### Alamofire와 Combine을 통한 네트워크 통신 방법
 
-### Combine의 passthrouhSubject를 통한 이벤트처리
+### Combine의 passthrouhSubject를 통한 이벤트 처리 방법
 
 ### 대중적인 라이브러리 사용(Kingfisher, Alamofire)
 
