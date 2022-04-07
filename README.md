@@ -34,7 +34,7 @@
 # 구현 화면
 - 검색어 입력 후 1초 뒤 검색 시작 + 목록 리셋 + 검색 결과가 없을 경우 안내문구 표시
 
-| | |
+| 검색어 입력 후 1초 뒤 검색 시작 + 목록 리셋 + 검색 결과가 없을 경우 안내문구 표시 | 검색어 입력 후 1초 뒤 검색 시작 + 목록 리셋 |
 |--- | ---|
 |![imageSearch_gif1](https://user-images.githubusercontent.com/39648822/162124451-800c5973-c795-4123-8357-d7ddbb366c1a.gif)| ![ImageSearch_gif3](https://user-images.githubusercontent.com/39648822/162126715-8dc66bde-24f3-482f-a816-ebdc60fb0f11.gif) |
 
