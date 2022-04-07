@@ -19,6 +19,7 @@
 		E4F95BA927FEA1850085DC2D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F95BA827FEA1850085DC2D /* ViewModel.swift */; };
 		E4F95BAB27FEA1D00085DC2D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F95BAA27FEA1D00085DC2D /* NetworkService.swift */; };
 		E4F95BB027FEA3650085DC2D /* Extension + View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F95BAF27FEA3650085DC2D /* Extension + View.swift */; };
+		E4F95BB327FEA4180085DC2D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F95BB227FEA4180085DC2D /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		E4F95BA827FEA1850085DC2D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E4F95BAA27FEA1D00085DC2D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E4F95BAF27FEA3650085DC2D /* Extension + View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + View.swift"; sourceTree = "<group>"; };
+		E4F95BB227FEA4180085DC2D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +69,12 @@
 		E4F95B8527FE9E430085DC2D /* ImageSearchAppUsingSpecificAPI */ = {
 			isa = PBXGroup;
 			children = (
-				E4F95BAC27FEA2FD0085DC2D /* Extension */,
-				E4F95BA727FEA1650085DC2D /* ViewModel */,
-				E4F95BA227FEA0060085DC2D /* Networking */,
-				E4F95B9A27FE9F000085DC2D /* Model */,
 				E4F95B8627FE9E430085DC2D /* ImageSearchAppUsingSpecificAPIApp.swift */,
-				E4F95B8827FE9E430085DC2D /* MainView.swift */,
+				E4F95BAC27FEA2FD0085DC2D /* Extension */,
+				E4F95BA227FEA0060085DC2D /* Networking */,
+				E4F95BB127FEA3F20085DC2D /* View */,
+				E4F95BA727FEA1650085DC2D /* ViewModel */,
+				E4F95B9A27FE9F000085DC2D /* Model */,
 				E4F95B8A27FE9E440085DC2D /* Assets.xcassets */,
 				E4F95B8C27FE9E440085DC2D /* Preview Content */,
 			);
@@ -119,6 +121,15 @@
 				E4F95BAF27FEA3650085DC2D /* Extension + View.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		E4F95BB127FEA3F20085DC2D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4F95B8827FE9E430085DC2D /* MainView.swift */,
+				E4F95BB227FEA4180085DC2D /* DetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4F95BA627FEA02B0085DC2D /* URLBuilder.swift in Sources */,
+				E4F95BB327FEA4180085DC2D /* DetailView.swift in Sources */,
 				E4F95B8927FE9E430085DC2D /* MainView.swift in Sources */,
 				E4F95BA427FEA0120085DC2D /* NetworkMethod.swift in Sources */,
 				E4F95B8727FE9E430085DC2D /* ImageSearchAppUsingSpecificAPIApp.swift in Sources */,
