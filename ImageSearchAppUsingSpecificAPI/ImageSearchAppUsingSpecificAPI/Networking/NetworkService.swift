@@ -22,15 +22,15 @@ class NetworkService {
         self.session = session
     }
     
-    func requst(request: URLRequest) -> AnyPublisher<[Document], NetworkError> {
+    func requst(request: URLRequest) -> AnyPublisher<ImageSearchEntity, NetworkError> {
         return session.dataTaskPublisher(for: request)
-            .tryMap { (data: Data, response: URLResponse) -> [Document] in
+            .tryMap { (data: Data, response: URLResponse) -> ImageSearchEntity in
                 guard let httpResponse = response as? HTTPURLResponse,
                       self.successResponseStatus.contains(httpResponse.statusCode) else {
                     throw NetworkError.invalidRequest
                 }
                 let imageSearchEntity = try JSONDecoder().decode(ImageSearchEntity.self, from: data)
-                return imageSearchEntity.documents
+                return imageSearchEntity
             }
             .mapError { error -> NetworkError in
                     .unknownError(message: "알수 없는 에러 발생: \(error)")

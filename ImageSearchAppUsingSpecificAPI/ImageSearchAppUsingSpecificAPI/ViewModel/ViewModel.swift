@@ -10,40 +10,47 @@ import Combine
 import Alamofire
 
 class ViewModel: ObservableObject {
-    @Published var items = 0..<5
     @Published var results = [Document]()
     @Published var networkResult = true
     @Published var noSearchResultText = ""
     @Published var isEndInfo: Meta? {
         didSet {
-            print("isEnd값 변화 : \(isEndInfo)")
+            print("값 변화 : \(isEndInfo)")
         }
     }
-    @Published var pageableInfo: Meta? {
+    @Published var pageableCount: Int? {
         didSet {
-            print("pageableCount값 변화 : \(pageableInfo?.pageableCount)")
+            print("pageableCount값 변화 : \(pageableCount)")
+            if pageableCount ?? 0 > 30 {
+                currentPage += 1
+            }
         }
     }
-
     @Published var isLoading: Bool = false
+    @Published var currentPage = 1
     
     private let network = NetworkService(session: URLSession.shared)
     private var cancellables = Set<AnyCancellable>()
-    var fetchNextPageImagesSubject = PassthroughSubject<(), Never>()
+    var fetchNextPageImagesSubject = PassthroughSubject<String, Never>()
     
     init() {
-        
+        fetchNextPageImagesSubject
+            .sink { [weak self] query in
+                guard let self = self else { return }
+                if self.isLoading == false {
+                    self.fetchNextPageImages(query: query)
+                }
+            }
+            .store(in: &cancellables)
     }
     
     func fetchNextPageImages(query: String) {
         self.isLoading = true
-        guard let isEndInfo = isEndInfo,
-                let pageableInfo = pageableInfo else { return }
-        let totalPage = pageableInfo.pageableCount / 30
-        let currentPage = totalPage - (totalPage - 1)
-        let nextPage = currentPage + 1
+        guard let isEnd = isEndInfo?.isEnd,
+        let pageableCount = pageableCount else { return }
         
-        if isEndInfo.isEnd == false {
+        if isEnd == false, pageableCount > 30 {
+            let nextPage = currentPage + 1
             AF.request(Router.getImages(query: query, page: nextPage))
                 .publishDecodable(type: ImageSearchEntity.self)
                 .compactMap { imageSearchEntity in
@@ -54,14 +61,11 @@ class ViewModel: ObservableObject {
                     case .failure(let error):
                         print("데이터 스트림 완료 실패: \(error)")
                     case .finished:
-                        print("데이터 스트림 완료")
+                        self.isLoading = false
                     }
                 } receiveValue: { imageSerchEntity in
                     self.results += imageSerchEntity.documents
-                    self.pageableInfo?.pageableCount = imageSerchEntity.meta.pageableCount
-                    print("총 문서 수: \(imageSerchEntity.meta.totalCount)")
-                    self.isEndInfo?.isEnd = imageSerchEntity.meta.isEnd
-                    print("")
+                    self.isEndInfo? = imageSerchEntity.meta
                 }
                 .store(in: &cancellables)
         }
@@ -105,9 +109,11 @@ class ViewModel: ObservableObject {
                                 self.networkResult = true
                             }
                         }
-                    } receiveValue: { documents in
+                    } receiveValue: { imageSearchEntity in
                         DispatchQueue.main.async {
-                            self.results = documents
+                            self.results = imageSearchEntity.documents
+                            self.isEndInfo = imageSearchEntity.meta
+                            self.pageableCount = imageSearchEntity.meta.pageableCount
                         }
                     }
                     .store(in: &cancellables)
