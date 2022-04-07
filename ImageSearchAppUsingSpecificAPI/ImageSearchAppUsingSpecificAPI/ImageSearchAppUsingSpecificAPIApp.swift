@@ -11,7 +11,8 @@ import SwiftUI
 struct ImageSearchAppUsingSpecificAPIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(ViewModel())
         }
     }
 }
