@@ -11,7 +11,8 @@ struct ImageSearchEntity: Codable {
     let documents: [Document]
     let meta: Meta
 }
-struct Document: Codable, Hashable {
+struct Document: Codable, Hashable, Identifiable {
+    let id = UUID()
     let collection: String
     let datetime: String?
     let displaySiteName: String?
