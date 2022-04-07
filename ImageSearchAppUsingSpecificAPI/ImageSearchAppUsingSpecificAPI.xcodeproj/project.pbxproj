@@ -13,6 +13,7 @@
 		E4F95B8E27FE9E440085DC2D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F95B8D27FE9E440085DC2D /* Preview Assets.xcassets */; };
 		E4F95B9627FE9E7F0085DC2D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4F95B9527FE9E7F0085DC2D /* Kingfisher */; };
 		E4F95B9927FE9EB40085DC2D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E4F95B9827FE9EB40085DC2D /* Alamofire */; };
+		E4F95B9C27FE9F170085DC2D /* ImageSearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F95B9B27FE9F170085DC2D /* ImageSearchEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		E4F95B8827FE9E430085DC2D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4F95B8A27FE9E440085DC2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4F95B8D27FE9E440085DC2D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E4F95B9B27FE9F170085DC2D /* ImageSearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		E4F95B8527FE9E430085DC2D /* ImageSearchAppUsingSpecificAPI */ = {
 			isa = PBXGroup;
 			children = (
+				E4F95B9A27FE9F000085DC2D /* Model */,
 				E4F95B8627FE9E430085DC2D /* ImageSearchAppUsingSpecificAPIApp.swift */,
 				E4F95B8827FE9E430085DC2D /* ContentView.swift */,
 				E4F95B8A27FE9E440085DC2D /* Assets.xcassets */,
@@ -69,6 +72,14 @@
 				E4F95B8D27FE9E440085DC2D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E4F95B9A27FE9F000085DC2D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4F95B9B27FE9F170085DC2D /* ImageSearchEntity.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 			files = (
 				E4F95B8927FE9E430085DC2D /* ContentView.swift in Sources */,
 				E4F95B8727FE9E430085DC2D /* ImageSearchAppUsingSpecificAPIApp.swift in Sources */,
+				E4F95B9C27FE9F170085DC2D /* ImageSearchEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
